@@ -1,26 +1,28 @@
 <template>
-    <div class="lz-header">
+    <header class="lz-header">
         <div class="lz-header_conetnt">
+            <div class="sidebar-button">
+                <font-awesome-icon icon="bars" />
+            </div>
             <h1 class="logo">
                 <a href="/">
-                    <span>MYBLOG</span>
-                    <img src="@/assets/image/logo2.png" alt="">
+                    <img src="@/assets/image/logo.png" alt="">
+                    <span>{{ $blogConfig.title }}</span>
                 </a>
             </h1>
-            <ul class="nav">
-                <li class="active">文章</li>
-                <li>微语</li>
-                <li>留言</li>
-                <li>相册</li>
-                <li>关于</li>
-            </ul>
+            <div class="links">
+                <nav-menu></nav-menu>
+            </div>
         </div>
-    </div>
+    </header>
 </template>
 
 <script>
+import NavMenu from '@/components/Menu'
 export default {
-    
+    components: {
+        NavMenu
+    }
 }
 </script>
 
@@ -37,39 +39,76 @@ export default {
 }
 .lz-header_conetnt{
     position: relative;
-    padding: 0 65px;
+    padding: 0 1.5rem;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    color: #fff;
     .logo{
-        margin: 0 80px 0 0;
+        margin: 0;
+        a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
         span{
-            display: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.2rem;
         }
         img{
-            width: 60px;
-            display: block;
+            height: 2.2rem;
+            min-width: 2.2rem;
+            vertical-align: top;
+            border-radius: 50%;
+            margin-right: .8rem;
         }
     }
-    .nav{
+    .links{
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
         display: flex;
         list-style: none;
         padding: 0;
-        li{
-            padding: 10px;
-            margin: 0 20px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: color .3s;
-            &:hover{
-                color: #ff7f21;
-            }
-        }
-        .active{
-            color: #ff7f21;
-        }
+        margin: 0;
+        transform: translateY(-50%);
+        z-index: 1;
+        // li{
+        //     padding: 10px;
+        //     margin: 0 20px;
+        //     font-size: 14px;
+        //     cursor: pointer;
+        //     transition: color .3s;
+        //     &:hover{
+        //         color: #ff7f21;
+        //     }
+        // }
+        // .active{
+        //     color: #ff7f21;
+        // }
+    }
+}
+.sidebar-button{
+    cursor: pointer;
+    display: none;
+    .fa-bars{
+        width: 100%;
+        height: 100%;
+        color: #242424;
+    }
+}
+@media screen and (max-width: 719px){
+    .lz-header_conetnt{
+        padding-left: 4rem;
+    }
+    .sidebar-button{
+        display: block;
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        top: .6rem;
+        left: 1rem;
+        padding: .6rem;
     }
 }
 </style>

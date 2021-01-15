@@ -1,0 +1,54 @@
+// 博客配置
+module.exports = {
+    title: 'Feibo Cat',
+    themeConfig: {
+        nav: [
+            {
+                title: '主页', link: '/'
+            },
+            {
+                title: '微语', link: ''
+            },
+            {
+                title: '留言', link: ''
+            },
+            {
+                title: '相册', link: ''
+            },
+            {
+                title: '关于我', link: ''
+            }
+        ]
+    },
+    author: 'Feibo', // 作者
+    authorAvatar: 'https://gw.alipayobjects.com/zos/rmsportal/ubnKSIfAJTxIgXOKlciN.png', // 头像
+    record: '鄂ICP备你的备案号', // icp备案
+    socials: { // home社交配置
+        github: 'https://github.com/LiuzijunL'
+    },
+    //主页文案配置
+    mottos: [{
+            zh: '一别两三年，忽然又夏天。',
+            en: 'Two or three years later, it was summer again.'
+        },
+        {
+            zh: '人生来来往往，来日并不方长。',
+            en: 'Life comes and goes, but the future is not long.'
+        },
+        {
+            zh: "年轻就是无限的可能。",
+            en: "Youth means limitless possibilities."
+        },
+        {
+            zh: "人生没有后悔，我们只能尽力去不让自己后悔。",
+            en: "Life without regret, we can only do our best to not to regret."
+        }
+    ],
+    //主页背景图配置
+    covers: [
+        'https://cdn.wentaowx.com/zj/1.jpg',
+        'https://cdn.wentaowx.com/zj/11.jpg',
+        'https://cdn.wentaowx.com/zj/41.jpg',
+        'https://cdn.wentaowx.com/zj/43.jpg'
+    ]
+}

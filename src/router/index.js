@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import config from '@/utils/config'
+// import NProgress from 'nprogress'
 import Layout from '@/pages/Layout.vue'
 
 Vue.use(VueRouter)
@@ -21,6 +23,16 @@ const router = new VueRouter({
         }
     ]
 })
+
+router.beforeEach((to, form, next) => {
+    document.title = config.title
+    // NProgress.start()
+    next()
+})
+
+// router.afterEach(() => {
+//     NProgress.done()
+// })
 
 
 export default router
