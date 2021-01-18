@@ -1,38 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import routerRoutes from './routes'
 import config from '@/utils/config'
-// import NProgress from 'nprogress'
-import Layout from '@/pages/Layout.vue'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
     mode: 'history',
-    routes: [
-        {
-            path: '/',
-            name: 'Layout',
-            component: Layout,
-            children: [
-                {
-                    path: '/',
-                    name: 'Home',
-                    component: () => import('@/pages/Home.vue')
-                }
-            ]
-        }
-    ]
+    routes: routerRoutes
 })
 
+//路由确认跳转前
 router.beforeEach((to, form, next) => {
     document.title = config.title
-    // NProgress.start()
+    NProgress.start()
     next()
 })
 
-// router.afterEach(() => {
-//     NProgress.done()
-// })
+//路由确认跳转后
+router.afterEach(() => {
+    NProgress.done()
+})
 
 
 export default router

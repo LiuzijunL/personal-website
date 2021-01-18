@@ -4,19 +4,23 @@ module.exports = {
     themeConfig: {
         nav: [
             {
-                title: '主页', link: '/'
+                title: '主页', link: '/', icon: 'home'
             },
             {
-                title: '微语', link: ''
+                title: '博客', icon: 'th-large', children: [
+                    { title: 'Others', link: '/categories/others' },
+                    // { title: 'Front-end', link: '/categories/front-end' },
+                    // { title: 'Back-end', link: '/categories/back-end' }
+                ]
             },
             {
-                title: '留言', link: ''
+                title: '标签', icon: 'tag', link: '/tag'
             },
             {
-                title: '相册', link: ''
+                title: '时间轴', icon: 'clock', link: '/timeline'
             },
             {
-                title: '关于我', link: ''
+                title: '关于我', icon: 'user', link: '/about'
             }
         ]
     },

@@ -1,17 +1,21 @@
 <template>
-    <div class="nav-links">
-        <div class="nav-item" v-for="(item,i) in menuList" :key="i">
-            {{ item.title }}
+    <div class="nav-links can-hide">
+        <div class="nav-item" v-for="(menu,i) in menuList" :key="i">
+            <menu-item :menu="menu"></menu-item>
         </div>
     </div>
 </template>
 
 <script>
+import menuItem from './menuItem'
 export default {
     data() {
         return {
             menuList: []
         }
+    },
+    components:{
+        menuItem
     },
     created(){
         let { nav } = this.$blogConfig.themeConfig
@@ -33,6 +37,10 @@ export default {
         &:first-child{
             margin-left: 0;
         }
+    }
+    a{
+        display: inline-block;
+        color: #fff;
     }
 }
 </style>

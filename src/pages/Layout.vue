@@ -11,7 +11,8 @@
 		</main>
 		
 		<footer-bar></footer-bar>
-        <!-- <vue-live2d style="position: fixed; right: 45px;bottom: 10px" :size="200" direction="right"></vue-live2d> -->
+		
+        <!-- <vue-live2d style="position: fixed; right: 40px;bottom: 10px" :size="200" direction="right"></vue-live2d> -->
     </div>
 </template>
 

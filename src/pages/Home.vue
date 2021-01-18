@@ -8,8 +8,8 @@
             <h4 class="scroll-down" @click="handleScrollDown" v-if="sliding"></h4>
         </div>
         <div class="home-blog-wrapper">
-            <div class="blog-list boxShdow">
-
+            <div class="blog-list">
+                <l-abstract :dataSource="dataSource"></l-abstract>
             </div>
             <div class="info-wrapper boxShdow">
                 <div class="personal-info-wrapper">
@@ -33,13 +33,23 @@
 </template>
 
 <script>
+import LAbstract from '@/components/Abstract'
 export default {
     data() {
         return {
             relate: {},
             sliding: true,
-            backgroundUrl: ''
+            backgroundUrl: '',
+            dataSource: [
+                { title: '搭建转移的新blog', imgUrl: 'https://zyj_yida.gitee.io/source/img/indexbg/5.jpg', create_time: '2021-01-18', content: '做网站的时候需要兼容PC端还要考虑适配移动端可以通过以下来进行判断引用'  },
+                { title: 'mysql查询分组显示数据结果之GROUP_CONCAT使用', imgUrl: 'https://zyj_yida.gitee.io/source/img/indexbg/16.jpg', create_time: '2021-01-18'  },
+                { title: '搭建转移的新blog', imgUrl: 'https://zyj_yida.gitee.io/source/img/indexbg/5.jpg', create_time: '2021-01-18', content: '做网站的时候需要兼容PC端还要考虑适配移动端可以通过以下来进行判断引用'  },
+                { title: 'mysql查询分组显示数据结果之GROUP_CONCAT使用', imgUrl: 'https://zyj_yida.gitee.io/source/img/indexbg/16.jpg', create_time: '2021-01-18'  },
+            ]
         }
+    },
+    components: {
+        LAbstract
     },
     created(){
         this.handleStartRandom()
@@ -181,11 +191,10 @@ export default {
         .blog-list{
             flex: auto;
             background-color: #fff;
-            height: 50vh;
         }
         .info-wrapper{
             position: sticky;
-            top: 20px;
+            top: 70px;
             transition: all .3s;
             margin-left: 15px;
             flex: 0 0 300px;
@@ -236,6 +245,14 @@ export default {
     @media screen and (max-width: 719px){
         .lz-hero{
             height: 450px;
+            .lz-copywriting{
+                h1{
+                    font-size: 2rem;
+                }
+                p{
+                    font-size: 1.2rem;
+                }
+            }
             .scroll-down{
                 display: none;
             }
@@ -245,6 +262,11 @@ export default {
             .info-wrapper{
                 margin-left: 0;
             }
+        }
+    }
+    @media screen and (max-width: 448px){
+        .lz-hero{
+            height: 100vh;
         }
     }
 }

@@ -1,5 +1,7 @@
 <template>
-    <h1>Tag</h1>
+    <div>
+        <l-fullPic></l-fullPic>
+    </div>
 </template>
 
 <script>
