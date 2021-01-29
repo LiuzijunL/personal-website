@@ -79,7 +79,7 @@ export default {
     .title{
         position: relative;
         font-size: 1.28rem;
-        line-height: 46px;
+        line-height: 40px;
         a{
             color: @color;
         }
@@ -91,7 +91,6 @@ export default {
     }
     .abstract{
         flex: auto;
-        overflow: hidden;
         .custom-block{
             padding: .2rem 1.5rem;
             border-left: .5rem solid @border-color;
@@ -101,12 +100,14 @@ export default {
             font-size: 14px;
             box-sizing: border-box;
             line-height: 1.6;
+            overflow: hidden;
         }
     }
     .tags{
         display: flex;
         align-items: center;
         color: #7f7f7f;
+        flex-wrap: wrap;
         span{
             display: flex;
             align-items: center;

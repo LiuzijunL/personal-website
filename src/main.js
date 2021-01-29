@@ -5,6 +5,8 @@ import Utils from './utils'
 import App from './App.vue'
 import config from './utils/config'
 import LFullPic from '@/components/FullPic'
+// 引入自己的组件
+import LzUI from '@/components'
 // 注册fontawesome5 字体图标库
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -14,6 +16,8 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('l-fullPic', LFullPic)
 
 Vue.config.productionTip = false
+
+Vue.use(LzUI)
 
 Vue.prototype.$utils = Utils
 Vue.prototype.$blogConfig = config

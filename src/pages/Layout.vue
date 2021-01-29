@@ -11,7 +11,8 @@
 		</main>
 		
 		<footer-bar></footer-bar>
-		
+
+		<back-top></back-top>
         <!-- <vue-live2d style="position: fixed; right: 40px;bottom: 10px" :size="200" direction="right"></vue-live2d> -->
     </div>
 </template>
@@ -20,10 +21,12 @@
 // import vueLive2d from 'vue-live2d'
 import HeaderBar from '@/components/HeaderBar'
 import FooterBar from '@/components/FooterBar'
+import BackTop from '@/components/BackTop'
 export default {
     components: {
 		HeaderBar,
 		FooterBar,
+		BackTop,
 		// vueLive2d
 	}
 }

@@ -13,8 +13,8 @@
             </div>
             <div class="info-wrapper boxShdow">
                 <div class="personal-info-wrapper">
-                    <img :src="$utils.userInfo.avatar" alt="">
-                    <h3 class="name">{{ $utils.userInfo.nickName }}</h3>
+                    <img class="personal-img" :src="$blogConfig.authorAvatar" alt="">
+                    <h3 class="name">{{ $blogConfig.author }}</h3>
                     <div class="num">
                         <div>
                             <h3>15</h3>
@@ -25,7 +25,35 @@
                             <h6>Tag</h6>
                         </div>
                     </div>
-                    <hr>
+                    <hr style="margin-bottom: 0px">
+                    <h4><font-awesome-icon icon="th-large" />Category</h4>
+                    <ul class="category-wrapper">
+                        <li class="category-item">
+                            <a href="categories/others">
+                                <span>Others</span>
+                                <span class="post-num" style="background-color: rgb(248, 178, 106);">2</span>
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="categories/others">
+                                <span>Front-end</span>
+                                <span class="post-num" style="background-color: rgb(225, 91, 100);">5</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr style="margin-bottom: 0px">
+                    <h4><font-awesome-icon icon="tag" />Tag</h4>
+                    <div class="tags">
+                        <lz-tag color="#f69178">All</lz-tag>
+                        <lz-tag color="#e5737b">Vue</lz-tag>
+                        <lz-tag color="#e5737b">React</lz-tag>
+                        <lz-tag color="#e5737b">Node</lz-tag>
+                    </div>
+                    <hr style="margin-bottom: 0px">
+                    <h4><font-awesome-icon icon="tired" />Friend Link</h4>
+                    <div class="friend-link-wrapper">
+                        <lz-link avatar="https://cdn.wentaowx.com/blog/dog.jpeg" title="何同学的解忧杂货铺" url="https://www.wentaowx.com/" description="这个博客是用来记录何同学的全栈进击之路以及生活中的点点滴滴">何同学的解忧杂货铺</lz-link>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,13 +130,28 @@ export default {
         },
         //点击角标下滑
         handleScrollDown(){
-            console.log('点击')
-        }
+            let innerHeight = window.innerHeight
+            let index = 10
+            let step = innerHeight / index
+            let scrollTop = 0
+            let scrollTimer = setInterval(() => {
+                scrollTop += step
+                index--
+                document.body.scrollTop = document.documentElement.scrollTop = scrollTop
+                if(index <= 0){
+                    clearInterval(scrollTimer)
+                }
+            }, 20)
+        },
+        //运动架
+        // showAnimate(el, scrollTop, fn){
+        //     clearInterval(el.timer)
+        // }
     }
 }
 </script>
 
-<style lang="less">
+<style scope lang="less">
 @box-shadow: 0 1px 8px rgba(0,0,0,.1);
 @box-shadow-hover: 0 2px 16px rgba(0,0,0,.2);
 @color: #242424;
@@ -208,7 +251,7 @@ export default {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                img{
+                .personal-img{
                     width: 100px;
                     border-radius: 50%;
                     display: block;
@@ -239,6 +282,48 @@ export default {
                         }
                     }
                 }
+            }
+            .category-wrapper{
+                list-style: none;
+                padding-left: 0;
+                margin-top: 0;
+                .category-item{
+                    margin-bottom: .4rem;
+                    padding: .4rem .8rem;
+                    transition: all .5s;
+                    border-radius: .25rem;
+                    box-shadow: 0px 1px 8px 0 rgba(0,0,0,.1);
+                    background-color: #fff;
+                    &:hover{
+                        transform: scale(1.04);
+                        a{
+                            color: #67cc86;
+                        }
+                    }
+                    a{
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        color: #242424;
+                    }
+                    .post-num{
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        text-align: center;
+                        line-height: 1.6rem;
+                        border-radius: .25rem;
+                        background-color: #eee;
+                        font-size: 13px;
+                        color: #fff;
+                    }
+                }
+            }
+            .tags{
+                color: #fff;
+            }
+            .friend-link-wrapper{
+                margin-bottom: 20px;
             }
         }
     }
