@@ -36,4 +36,9 @@ export default {
 .theme-container{
     box-sizing: border-box;
 }
+.theme-item{
+	max-width: 860px;
+    margin: 0px auto;
+    padding: 2rem 2.5rem;
+}
 </style>

@@ -1,5 +1,5 @@
 {
-  "name": "my-blog",
+  "name": "blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,10 +13,15 @@
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "dayjs": "^1.10.4",
+    "github-markdown-css": "^4.0.0",
+    "markdown-it": "^12.0.4",
     "nprogress": "^0.2.0",
     "valine": "^1.4.14",
     "vue": "^2.6.11",
     "vue-live2d": "^1.2.1",
+    "vue-loader": "^15.9.6",
+    "vue-markdown": "^2.2.4",
     "vue-router": "^3.4.9"
   },
   "devDependencies": {

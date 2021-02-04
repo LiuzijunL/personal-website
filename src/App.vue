@@ -40,4 +40,7 @@ a{
 	font-weight: 500;
 	color: @default-a-color;
 }
+ol, ul{
+	padding-left: 1.2rem;
+}
 </style>

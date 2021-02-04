@@ -6,7 +6,7 @@
             </div>
             <h1 class="logo">
                 <a href="/">
-                    <img src="@/assets/image/logo.png" alt="">
+                    <img :src="$blogConfig.logo" alt="">
                     <span>{{ $blogConfig.title }}</span>
                 </a>
             </h1>
@@ -70,7 +70,7 @@ export default {
             height: 2.2rem;
             min-width: 2.2rem;
             vertical-align: top;
-            border-radius: 50%;
+            // border-radius: 50%;
             margin-right: .8rem;
         }
     }

@@ -1,8 +1,8 @@
 <template>
     <dropdown :menu="menu" v-if="menu.children" :navStyle="{ backgroundColor: 'rgba(0,0,0,0.2)' }"></dropdown>
-    <a :href="menu.link" v-else>
+    <router-link :to="menu.link" v-else>
         <font-awesome-icon :icon="menu.icon" v-if="menu.icon"/>{{ menu.title }}
-    </a>
+    </router-link>
 </template>
 
 <script>

@@ -11,10 +11,10 @@
                 <span>2021-2022</span>
             </a>
         </span>
-        <span>
+        <!-- <span>
             <font-awesome-icon icon="eye" />
             <a><span>888</span></a>
-        </span>
+        </span> -->
     </footer>
 </template>
 
@@ -33,7 +33,7 @@ export default {
     text-align: center;
     color: @iconColor;
     span{
-        margin-left: 1rem;
+        margin-left: .6rem;
     }
     a{
         font-size: 14px;

@@ -1,6 +1,7 @@
 // 博客配置
 module.exports = {
-    title: 'Feibo Cat',
+    title: 'Feibo曾经的曾经',
+    logo: '/assets/image/cat.png',
     themeConfig: {
         nav: [
             {
@@ -26,7 +27,7 @@ module.exports = {
     },
     author: 'Feibo', // 作者
     authorAvatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/hA5SFhWH9TfA4Dw3H7HqnmNEFfR8AOYVPaI3vvgk4GGhZyAZc3BOvX5RjVWtlEic5MGv6IibJoxTicR48bpsWh9dQ/132', // 头像
-    record: '鄂ICP备你的备案号', // icp备案
+    record: '鄂ICP备2021002045号-1', // icp备案
     socials: { // home社交配置
         github: 'https://github.com/LiuzijunL'
     },

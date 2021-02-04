@@ -1,6 +1,6 @@
 <template>
     <div>
-        <l-fullPic></l-fullPic>
+        
     </div>
 </template>
 

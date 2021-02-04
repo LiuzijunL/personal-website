@@ -11,12 +11,15 @@ files.keys().forEach(key => {
 let generator = [
     {
         path: '/',
-        name: '主页',
         component: () => import('@/pages/Home.vue')
+    },
+    {
+        path: '/views/blogs/:id',
+        component: () => import('@/pages/Blogs.vue')
     }
 ]
 Object.keys(pages).forEach(item => {
-    if(['Home', 'Layout'].includes(item)){
+    if(['Home', 'Layout', 'Blogs'].includes(item)){
         return false
     }
     let path = '/' + item

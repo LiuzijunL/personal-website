@@ -1,16 +1,18 @@
 'use sitic'
+import * as dayjs from 'dayjs'
 
 class Utils {
     /**
-     * 博客配置
+     * 
+     * @param {*} value 
+     * @param {*} format
      */
-    static userInfo = {
-        avatar: 'https://gw.alipayobjects.com/zos/rmsportal/ubnKSIfAJTxIgXOKlciN.png',
-        nickName: 'Feibo'
+    static format (value, format = 'YYYY-MM-DD HH:mm:ss') {
+        return dayjs(value).format(format)
     }
     /**
      * 复制文案
-     * @param value
+     * @param {*} value
      */
     static isCopy(value){
         let oInput = document.createElement('textarea')

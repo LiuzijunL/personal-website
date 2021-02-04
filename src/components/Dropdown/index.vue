@@ -8,7 +8,7 @@
         </a>
         <ul class="nav-dropdown" :style="navStyle">
             <li class="dropdown-item" v-for="(item,i) in menu.children" :key="i">
-                <a :href="item.link">{{ item.title }}</a>
+                <router-link :to="item.link">{{ item.title }}</router-link>
             </li>
         </ul>
     </div>

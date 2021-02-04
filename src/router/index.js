@@ -15,7 +15,12 @@ const router = new VueRouter({
 
 //路由确认跳转前
 router.beforeEach((to, form, next) => {
-    document.title = config.title
+    let { title } = config
+    if(to.name){
+        let name = to.name.replace('/', ' ')
+        title = `${name} | ${title}`
+    }
+    document.title = title
     NProgress.start()
     next()
 })

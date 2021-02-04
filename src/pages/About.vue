@@ -19,7 +19,7 @@
                 </div>
             </div>
         </l-fullPic>
-        <div class="content__default">
+        <div class="content__default theme-item">
             <div class="custom-block tip">
                 <p>后来的我们依然走着</p>
                 <p>只是不再并肩了</p>
@@ -30,8 +30,14 @@
             <p>通过邮箱或者下方评论留言都可，记得留下你的邮箱便于及时收到回复</p>
             <p>邮箱：836200461@qq.com</p>
             <p>QQ：836200461</p>
-            <div class="comments-wrapper"></div>
         </div>
+        <footer class="page-edit theme-item">
+            <div class="last-updated">
+                <span class="prefix">Last Updated: </span>
+                <span class="time">{{ revisionTime }}</span>
+            </div>
+        </footer>
+        <div class="comments-wrapper theme-item"></div>
     </div>
 </template>
 
@@ -41,7 +47,7 @@ export default {
     data() {
         return {
             author: '',
-            revisionTime: '2021/01/29'
+            revisionTime: '2021/01/29 14:52:59'
         }
     },
     created(){
@@ -68,20 +74,33 @@ export default {
         padding: .1rem 1.5rem;
         background-color: hsla(0,0%,83.1%,.322);
     }
+    .content__default{
+        padding-top: 4.6rem;
+    }
     p{
         font-size: 15px;
     }
     h3{
         margin-top: 3rem;
     }
-}
-.content__default{
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 4rem 2rem 2.5rem;
+    .page-edit{
+        padding-top: 1.3rem;
+        padding-bottom: 1.3rem;
+        overflow: auto;
+        .last-updated{
+            float: right;
+            font-size: 14px;
+            .prefix{
+                font-weight: 500;
+                color: #67cc86;
+            }
+            .time{
+                color: #aaa;
+            }
+        }
+    }
 }
 .comments-wrapper{
-    margin-top: 3rem;
     .vpanel{
         .vwrap{
             background-color: #f3f4f4;

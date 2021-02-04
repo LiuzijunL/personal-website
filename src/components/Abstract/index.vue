@@ -11,10 +11,21 @@ export default {
         dataSource: {
             type: Array,
             required: true
+        },
+        totalPage: {
+            type: Number,
+            default: 0
+        },
+        currentPage: {
+            type: Number,
+            default: 1
         }
     },
     components: {
         AbstractItem
+    },
+    methods: {
+        
     }
 }
 </script>
