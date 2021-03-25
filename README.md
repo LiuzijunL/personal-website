@@ -27,3 +27,28 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### vscode eslint配置
+{
+    "workbench.iconTheme": "vscode-icons",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        "vue",
+        "html"
+    ],
+    "vetur.format.defaultFormatterOptions": {
+        "prettier": {
+            // 格式化加分号
+            "semi": true,
+            // 格式化为单引号
+            "singleQuote": true
+        }
+    },
+    "vetur.format.options.tabSize": 4,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true
+}
