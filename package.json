@@ -30,6 +30,7 @@
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
     "babel-polyfill": "^6.26.0",
+    "compression-webpack-plugin": "^5.0.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "less": "^4.1.0",
